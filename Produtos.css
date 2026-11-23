@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   PÁGINA
+   (fundo e fonte ficam na própria página, e não no body,
+   para não brigar com o CSS das outras telas)
+========================= */
+
+.pagina-produtos{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    font-family:'Poppins',sans-serif;
+    background:#EAEAEA;
+}
+
+.pagina-produtos button,
+.pagina-produtos input{
+    font-family:inherit;
+}
+
+.pagina-produtos button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    transform:none !important;
+}
+
+.pagina-produtos footer{
+    margin-top:auto;
+}
+
+.home-produtos{
+    display:flex;
+    flex:1;
+}
+
+/* =========================
+   SIDEBAR (padrão do HomeAdmin)
+========================= */
+
+.pagina-produtos .sidebar-produtos{
+    width:250px;
+    background:#E8C8F3;
+    padding:35px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.pagina-produtos .logo-produtos{
+    font-size:30px;
+    font-weight:700;
+    color:#4A2E6D;
+}
+
+.pagina-produtos .menu-produtos{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:40px;
+}
+
+.pagina-produtos .menu-produtos button{
+    border:none;
+    background:transparent;
+    text-align:left;
+    padding:16px;
+    border-radius:16px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.pagina-produtos .menu-produtos button:hover{
+    background:rgba(255,255,255,.6);
+}
+
+/* cores por classe (e não por posição, que quebra se o menu mudar) */
+.pagina-produtos .menu-produtos .dashboard{ color:#3366FF; }
+.pagina-produtos .menu-produtos .produtos{ color:#D8A100; }
+.pagina-produtos .menu-produtos .clientes{ color:#FF6B81; }
+.pagina-produtos .menu-produtos .pedidos{ color:#267BFF; }
+.pagina-produtos .menu-produtos .usuarios{ color:#57C100; }
+.pagina-produtos .menu-produtos .financeiro{ color:#C056FF; }
+
+/* item ativo */
+.pagina-produtos .menu-produtos button.ativo{
+    background:#4A2E6D !important;
+    color:#FFFFFF !important;
+    box-shadow:0 8px 20px rgba(74,46,109,.3);
+}
+
+/* BOTÃO SAIR */
+
+.pagina-produtos .btn-sidebar-sair{
+    border:none;
+    background:#FFD6DF;
+    color:#A61B39;
+    padding:15px;
+    border-radius:16px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.pagina-produtos .btn-sidebar-sair:hover{
+    background:#FFC2D0;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.pagina-produtos .conteudo-produtos{
+    flex:1;
+    min-width:0;
+    padding:35px;
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.pagina-produtos .topo-produtos{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.pagina-produtos .topo-textos h1{
+    font-size:34px;
+    color:#4A2E6D;
+}
+
+.pagina-produtos .topo-textos p{
+    color:#666;
+    margin-top:5px;
+}
+
+.pagina-produtos .topo-direita{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.pagina-produtos .buscar input{
+    width:260px;
+    padding:12px 16px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    font-size:14px;
+}
+
+.pagina-produtos .buscar input:focus{
+    outline:none;
+}
+
+.pagina-produtos .perfil{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#DAB7FF;
+    border:3px solid #FFFFFF;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.pagina-produtos .perfil:hover{
+    transform:scale(1.08);
+}
+
+/* botão "+ Novo Produto" no fluxo normal (antes usava position/top/left negativos) */
+.pagina-produtos .topo-acoes{
+    margin-bottom:25px;
+}
+
+.pagina-produtos .btn-adicionar{
+    background:#BFF0D1;
+    color:#166534;
+    border:none;
+    padding:12px 22px;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.pagina-produtos .btn-adicionar:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.pagina-produtos .titulo-produtos{
+    font-size:24px;
+    font-weight:600;
+    color:#4A2E6D;
+    margin-bottom:25px;
+}
+
+/* mensagens de carregando / erro / lista vazia */
+
+.pagina-produtos .mensagem-lista{
+    text-align:center;
+    color:#666;
+    margin:20px 0;
+}
+
+.pagina-produtos .mensagem-lista.erro{
+    color:#B00020;
+    font-weight:600;
+}
+
+/* =========================
+   GRID DE PRODUTOS
+========================= */
+
+.pagina-produtos .grid-produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+}
+
+.pagina-produtos .card-produto{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.pagina-produtos .card-produto:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+
+.pagina-produtos .card-produto img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    display:block;
+    background:#F3EEFA;
+}
+
+.pagina-produtos .card-body{
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.pagina-produtos .card-body h3{
+    font-size:22px;
+    color:#4A2E6D;
+    margin-bottom:8px;
+    word-break:break-word;
+}
+
+.pagina-produtos .card-body h4{
+    font-size:14px;
+    font-weight:500;
+    color:#777;
+    margin-bottom:6px;
+}
+
+.pagina-produtos .card-body p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:15px;
+    line-height:1.5;
+    word-break:break-word;
+}
+
+.pagina-produtos .preco{
+    color:#16A34A;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+/* GRADE DENTRO DO CARD */
+
+.pagina-produtos .grade-card{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-height:70px;
+}
+
+.pagina-produtos .item-grade{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    background:#F8F3FF;
+    border:1px solid #E7D9FF;
+    border-radius:12px;
+    padding:8px 12px;
+}
+
+.pagina-produtos .grade-info{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.pagina-produtos .grade-info span{
+    font-size:13px;
+    font-weight:600;
+    color:#4D336D;
+}
+
+.pagina-produtos .estoque-grade{
+    background:#8F4C66;
+    color:white;
+    font-size:12px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:999px;
+    white-space:nowrap;
+}
+
+.pagina-produtos .sem-grade{
+    font-size:13px;
+    color:#999;
+    text-align:center;
+    padding:12px 0;
+}
+
+/* BOTÕES DO CARD (sempre alinhados no rodapé do card) */
+
+.pagina-produtos .acoes{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:auto;
+    padding-top:15px;
+}
+
+.pagina-produtos .btn-editar,
+.pagina-produtos .btn-excluir{
+    width:100%;
+    height:45px;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.pagina-produtos .btn-editar{
+    background:#DFE8FF;
+    color:#3559D5;
+}
+
+.pagina-produtos .btn-excluir{
+    background:#FFE0E0;
+    color:#E53935;
+}
+
+.pagina-produtos .btn-editar:hover,
+.pagina-produtos .btn-excluir:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MODAL DE PRODUTO
+========================= */
+
+.pagina-produtos .modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.pagina-produtos .modal-box{
+    width:700px;
+    max-width:95%;
+    max-height:90vh;
+    overflow-y:auto;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+}
+
+.pagina-produtos .modal-box h2{
+    color:#4A2E6D;
+    margin-bottom:20px;
+}
+
+.pagina-produtos .modal-box h3{
+    margin-top:20px;
+    margin-bottom:10px;
+    color:#4A2E6D;
+}
+
+.pagina-produtos .modal-box input{
+    width:100%;
+    padding:12px;
+    border:1px solid #DDD;
+    border-radius:12px;
+    margin-bottom:12px;
+    font-size:14px;
+}
+
+.pagina-produtos .modal-box input:focus{
+    outline:none;
+    border-color:#C89DFF;
+}
+
+.pagina-produtos .erro-modal{
+    background:#FAD1D1;
+    color:#B00020;
+    padding:12px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+/* GRADE NO MODAL */
+
+.pagina-produtos .linha-grade{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr auto;
+    gap:10px;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.pagina-produtos .linha-grade input{
+    margin-bottom:0;
+    min-width:0;
+}
+
+.pagina-produtos .btn-remover-grade{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:12px;
+    background:#FFD6D6;
+    color:#B91C1C;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.pagina-produtos .btn-remover-grade:hover{
+    background:#FFC2C2;
+}
+
+/* BOTÕES DO MODAL */
+
+.pagina-produtos .modal-botoes{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.pagina-produtos .btn-salvar{
+    background:#BFF0D1;
+    color:#166534;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.pagina-produtos .btn-cancelar{
+    background:#FFD6D6;
+    color:#B91C1C;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* =========================
+   MODAL DE CONFIRMAÇÃO
+========================= */
+
+.pagina-produtos .modal-confirmacao{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(4px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.pagina-produtos .box-confirmacao{
+    width:450px;
+    max-width:90%;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+    animation:modalZoom .25s ease;
+}
+
+/* o div do ícone no JSX é vazio, então o ícone vem daqui */
+.pagina-produtos .icone-excluir{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.pagina-produtos .icone-excluir::before{
+    content:"🗑️";
+}
+
+.pagina-produtos .box-confirmacao h2{
+    color:#4A2E6D;
+    margin-bottom:10px;
+}
+
+.pagina-produtos .box-confirmacao p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.pagina-produtos .acoes-confirmacao{
+    display:flex;
+    gap:12px;
+}
+
+.pagina-produtos .btn-cancelar-exclusao,
+.pagina-produtos .btn-confirmar-excluir{
+    flex:1;
+    height:48px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.pagina-produtos .btn-cancelar-exclusao{
+    background:#ECECEC;
+    color:#555;
+}
+
+.pagina-produtos .btn-confirmar-excluir{
+    background:#FF6B6B;
+    color:white;
+}
+
+.pagina-produtos .btn-confirmar-excluir:hover{
+    background:#E54848;
+}
+
+@keyframes modalZoom{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:900px){
+
+    .home-produtos{
+        flex-direction:column;
+    }
+
+    .pagina-produtos .sidebar-produtos{
+        width:100%;
+    }
+
+    .pagina-produtos .topo-direita{
+        width:100%;
+    }
+
+    .pagina-produtos .buscar{
+        flex:1;
+    }
+
+    .pagina-produtos .buscar input{
+        width:100%;
+    }
+
+    .pagina-produtos .linha-grade{
+        grid-template-columns:1fr;
+    }
+
+    .pagina-produtos .btn-remover-grade{
+        width:100%;
+    }
+}
+
+@media(max-width:600px){
+
+    .pagina-produtos .conteudo-produtos{
+        padding:20px;
+    }
+
+    .pagina-produtos .modal-box{
+        padding:20px;
+    }
+
+    .pagina-produtos .acoes-confirmacao{
+        flex-direction:column;
+    }
+}

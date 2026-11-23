@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Todas as classes começam com "lv-" para não conflitar com
+   o CSS das outras páginas (o React junta todos os CSS no mesmo escopo). */
+
+.lv-pagina,
+.lv-pagina * {
+    box-sizing: border-box;
+}
+
+.lv-pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #EAEAEA;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lv-layout {
+    flex: 1;
+    display: flex;
+}
+
+/* ===== SIDEBAR ===== */
+.lv-sidebar {
+    width: 230px;
+    min-width: 230px;
+    background: #E8C8F2;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.lv-logo {
+    margin: 6px 0 36px;
+    padding: 0 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4B2C6E;
+    white-space: nowrap;
+}
+
+.lv-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lv-menu-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 18px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.lv-menu-btn:hover {
+    transform: translateX(3px);
+}
+
+.lv-menu-ativo {
+    background: #4B2C6E;
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(75, 44, 110, 0.3);
+}
+
+.lv-cor-produtos    { color: #D89A00; }
+.lv-cor-clientes    { color: #FF6B81; }
+.lv-cor-pedidos     { color: #2675D8; }
+.lv-cor-usuarios    { color: #4DC400; }
+.lv-cor-faturamento { color: #B45CFF; }
+
+.lv-btn-sair {
+    border: none;
+    background: #FFD3D3;
+    color: #8B1E1E;
+    padding: 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.lv-btn-sair:hover {
+    transform: scale(1.03);
+}
+
+/* ===== CONTEÚDO ===== */
+.lv-conteudo {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== TOPO ===== */
+.lv-topo {
+    background: #ECE8F3;
+    padding: 26px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.lv-topo-textos h1 {
+    margin: 0 0 4px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #4B2C6E;
+}
+
+.lv-topo-textos p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.lv-topo-direita {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lv-busca {
+    width: 230px;
+    height: 42px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.lv-busca input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.lv-perfil {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #D9B8FF;
+    border: 3px solid #FFFFFF;
+    cursor: pointer;
+}
+
+/* ===== CORPO ===== */
+.lv-corpo {
+    padding: 26px 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ===== BOTÕES ===== */
+.lv-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.lv-btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 22px;
+    transition: 0.3s;
+}
+
+.lv-btn:hover {
+    transform: scale(1.04);
+}
+
+.lv-btn-verde {
+    background: #BFF0D1;
+    color: #0A7A42;
+}
+
+.lv-btn-rosa {
+    background: #F9CBD3;
+    color: #C0405A;
+}
+
+/* ===== CARDS RESUMO ===== */
+.lv-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.lv-resumo {
+    min-height: 140px;
+    border-radius: 16px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.lv-resumo h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.lv-numero {
+    display: block;
+    width: 100px;
+    padding: 5px 0;
+    background: #F4F4F4;
+    color: #111;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.lv-resumo-azul  { background: #CCDFFB; }
+.lv-resumo-azul h2  { color: #2B4DA8; }
+
+.lv-resumo-verde { background: #D3F0DC; }
+.lv-resumo-verde h2 { color: #1E8B4C; }
+
+.lv-resumo-rosa  { background: #F9CBD3; }
+.lv-resumo-rosa h2  { color: #C0405A; }
+
+/* ===== CARD DA TABELA ===== */
+.lv-card {
+    background: #FFFFFF;
+    padding: 24px 22px 22px;
+    border-radius: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lv-card h2 {
+    margin: 0 0 18px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #6B3F98, #8E5BB8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+}
+
+.lv-erro {
+    background: #FFCACA;
+    color: #A11D1D;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+}
+
+.lv-carregando {
+    text-align: center;
+    color: #6F6F6F;
+    padding: 16px 0;
+    font-size: 0.9rem;
+}
+
+/* ===== TABELA ===== */
+.lv-tabela-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    overflow-x: auto;
+    background: #F5F5F5;
+}
+
+.lv-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: #F5F5F5;
+}
+
+/* O azul vem de outro CSS do projeto (provavelmente th/thead do Dashboard),
+   por isso a cor é aplicada em cada nível e com !important. */
+.lv-pagina .lv-tabela thead,
+.lv-pagina .lv-tabela thead tr,
+.lv-pagina .lv-tabela thead th {
+    background: #D9B8FF !important;
+    background-color: #D9B8FF !important;
+    background-image: none !important;
+}
+
+.lv-tabela th {
+    padding: 15px 14px;
+    color: #4B2C6E;
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.lv-tabela td {
+    padding: 16px 14px;
+    border-bottom: 1px solid #E6E6E6;
+    font-size: 0.95rem;
+    color: #4A4A4A;
+    text-align: center;
+}
+
+.lv-tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lv-tabela .lv-col-id {
+    width: 100px;
+}
+
+.lv-tabela .lv-col-status {
+    width: 160px;
+}
+
+.lv-tabela .lv-vazio {
+    text-align: center;
+    padding: 20px;
+    color: #6F6F6F;
+}
+
+/* ===== STATUS (cores pastel) ===== */
+.lv-status {
+    display: inline-block;
+    min-width: 96px;
+    padding: 5px 16px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.lv-status-ativo {
+    background: #D3F5E0;
+    color: #1E8B4C;
+}
+
+.lv-status-desativado {
+    background: #FAD1D1;
+    color: #C0405A;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+    .lv-layout {
+        flex-direction: column;
+    }
+
+    .lv-sidebar {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .lv-logo {
+        margin: 0 0 20px;
+    }
+
+    .lv-topo {
+        padding: 22px 20px;
+    }
+
+    .lv-corpo {
+        padding: 22px 20px 32px;
+    }
+
+    .lv-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .lv-topo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lv-topo-direita {
+        width: 100%;
+    }
+
+    .lv-busca {
+        flex: 1;
+        width: auto;
+    }
+}

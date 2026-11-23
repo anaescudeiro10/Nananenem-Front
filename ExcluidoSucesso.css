@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.pagina-sucesso{
+    min-height: 100vh;
+    background: #e8d9f5;
+}
+
+
+.conteudo-sucesso{
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+
+
+.card-sucesso{
+    width: 500px;
+
+    background: rgba(255,255,255,0.92);
+
+    padding: 60px 40px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.card-sucesso h1{
+    color: #5b3f86;
+
+    font-size: 34px;
+
+    margin-bottom: 50px;
+
+    font-weight: 500;
+}
+
+.card-sucesso p{
+    color: #5b3f86;
+
+    font-size: 24px;
+
+    margin-bottom: 50px;
+}
+
+
+.btn-voltar{
+    border: none;
+
+    background: #97efc1;
+
+    color: #24553b;
+
+    padding: 14px 50px;
+
+    border-radius: 30px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-voltar:hover{
+    background: #7fe4ae;
+}

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+}
+
+
+.pagina-sucesso{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:linear-gradient(135deg, #F3F3F3, #EAE6F4);
+}
+
+/* ===== CENTRALIZAÇÃO ===== */
+
+.conteudo-sucesso{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+/* ===== CARD ===== */
+
+.box-sucesso{
+    width:520px;
+    background:#FFFFFF;
+    padding:60px 50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    animation:fadeUp 0.6s ease;
+}
+
+/* ===== ANIMAÇÃO ===== */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== ÍCONE ===== */
+
+.icone-sucesso{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+/* ===== TEXTOS ===== */
+
+.box-sucesso h1{
+    color:#56347A;
+    font-size:34px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.box-sucesso p{
+    color:#666;
+    font-size:18px;
+    line-height:28px;
+    margin-bottom:40px;
+}
+
+/* ===== BOTÃO ===== */
+
+.btn-voltar-home{
+    border:none;
+    background:#BFF0D1;
+    color:#0A7A42;
+    padding:16px 50px;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-voltar-home:hover{
+    background:#A7E8BE;
+    transform:scale(1.05);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width:700px){
+
+    .box-sucesso{
+        width:95%;
+        padding:40px 25px;
+    }
+
+    .box-sucesso h1{
+        font-size:26px;
+    }
+
+    .box-sucesso p{
+        font-size:16px;
+    }
+
+    .icone-sucesso{
+        font-size:50px;
+    }
+}

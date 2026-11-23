@@ -1,0 +1,81 @@
+.form-pedido {
+    margin: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-pedido input,
+.form-pedido select {
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid #E5E5E5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* LINHA */
+.linha-produto {
+    display: flex;
+    gap: 10px;
+}
+
+/* BOTÃO ADD */
+.btn-add {
+    background: #A5F8CE;
+    color: #065F46;
+    border: none;
+    padding: 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* REMOVER */
+.btn-remover {
+    background: #FFD7E1;
+    color: #7F1D1D;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* TOTAL */
+.resumo {
+    margin: 30px 40px;
+    font-size: 22px;
+    color: #4A2E6D;
+    font-weight: 700;
+}
+
+/* BOTÕES */
+.acoes {
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.acoes button {
+    padding: 14px 24px;
+    border-radius: 18px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.salvar {
+    background: #D4E7FF;
+    color: #1E3A8A;
+}
+
+/* FOOTER */
+.footer-vendedor {
+    background: #EFD2FF;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #DEC2EF;
+}
+
+.footer-vendedor p {
+    color: #4A2E6D;
+}

@@ -1,0 +1,196 @@
+.footer {
+    background: #e5c9ec;
+    padding: 35px 40px 20px;
+    margin-top: 40px;
+
+    /* REMOVE A LINHA */
+    border-top: none;
+    box-shadow: none;
+}
+
+/* CONTEÚDO */
+
+.footer-content {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+
+.footer-brand h2 {
+
+    color: #4a3463;
+    font-size: 36px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.footer-brand span {
+    color: #c79acb;
+}
+
+.footer-brand p {
+
+    max-width: 320px;
+    color: #6b5b75;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* INFOS */
+
+.footer-info {
+
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-item h4 {
+
+    color: #6b4f8a;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer-item p {
+
+    color: #6b5b75;
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* PARTE DE BAIXO */
+
+.footer-bottom {
+
+    /* REMOVE A LINHA ROSA */
+    border-top: none;
+
+    margin-top: 30px;
+    padding-top: 10px;
+
+    text-align: center;
+
+    font-size: 14px;
+    color: #7a628f;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1024px) {
+
+    .footer {
+
+        padding: 30px 30px 20px;
+    }
+
+    .footer-content {
+
+        gap: 35px;
+    }
+
+    .footer-info {
+
+        gap: 35px;
+    }
+
+    .footer-brand h2 {
+
+        font-size: 32px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .footer {
+
+        padding: 30px 20px 20px;
+        text-align: center;
+    }
+
+    .footer-content {
+
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-info {
+
+        width: 100%;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .footer-brand {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand p {
+
+        max-width: 100%;
+    }
+
+    .footer-item {
+
+        min-width: 150px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .footer {
+
+        padding: 25px 15px 15px;
+    }
+
+    .footer-content {
+
+        gap: 25px;
+    }
+
+    .footer-info {
+
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-brand h2 {
+
+        font-size: 28px;
+    }
+
+    .footer-brand p {
+
+        font-size: 14px;
+    }
+
+    .footer-item h4 {
+
+        font-size: 16px;
+    }
+
+    .footer-item p {
+
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+
+        font-size: 13px;
+    }
+
+}

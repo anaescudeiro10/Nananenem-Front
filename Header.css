@@ -1,0 +1,98 @@
+.header{
+    width:100%;
+    height:120px;
+
+    background:#EFD2FF;
+
+    border-radius:0 0 25px 25px;
+
+    padding:0 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* ESQUERDA */
+
+.header-left h1{
+    font-size:38px;
+    color:#4A2E6D;
+    font-weight:700;
+    line-height:1;
+    margin-bottom:6px;
+}
+
+.header-left p{
+    font-size:18px;
+    color:#4A2E6D;
+}
+
+/* DIREITA */
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* BUSCA */
+
+.search-box{
+    width:280px;
+    height:48px;
+
+    background:#FFFFFF;
+
+    border-radius:999px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 18px;
+    gap:10px;
+}
+
+.search-box input{
+    width:100%;
+
+    border:none;
+    outline:none;
+    background:none;
+
+    font-size:15px;
+}
+
+.search-icon{
+    font-size:14px;
+}
+
+/* BOTÃO */
+
+.btn-sair-header{
+    border:none;
+
+    background:#FECACA;
+    color:#7F1D1D;
+
+    width:100px;
+    height:45px;
+
+    border-radius:999px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+/* PERFIL */
+
+.user-avatar{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#CDB4DB;
+}

@@ -1,0 +1,123 @@
+.pagina-pedidos {
+    padding: 30px;
+    background: #f5f6fa;
+    min-height: 100vh;
+}
+
+/* TOPO */
+.topo-pedidos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.topo-pedidos h1 {
+    color: #6c5ce7;
+}
+
+/* BOTÃO */
+.btn-novo {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-novo:hover {
+    background: #5a4bd6;
+}
+
+/* FILTROS */
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros input,
+.filtros select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    color: #6c5ce7;
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+th {
+    background: #6c5ce7;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* STATUS */
+.status {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.status.criado {
+    background: orange;
+}
+
+.status.enviado {
+    background: #0984e3;
+}
+
+.status.entregue {
+    background: #00b894;
+}
+
+.status.cancelado {
+    background: #d63031;
+}
+
+/* BOTÃO TABELA */
+td button {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background: #5a4bd6;
+}
